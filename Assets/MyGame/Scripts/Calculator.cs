@@ -10,6 +10,9 @@ public class Calculator : MonoBehaviour
     public InputField ipfVarB;
     public Button btnAddNumbers;
     public Button btnSubNumbers;
+    public int value;
+    public float a;
+    public float b;
 
 
     // Start is called before the first frame update
@@ -62,4 +65,34 @@ public class Calculator : MonoBehaviour
         result.text = Addresult.ToString();
 
     }
+
+    public void PythagorasNumbersOnClick()
+    {
+        PythagorasMethode(a, b);
+        float result = PythagorasMethode(a, b) + PythagorasMethode(a, b);
+        Debug.Log("result: " + result);
+
+
+    }
+
+    int Square(int a)
+    {
+
+        Debug.Log("result Square" + a * a);
+        return a * a;
+
+    }
+
+    float PythagorasMethode(float a, float b)
+    {
+        float cSquare;
+        cSquare = (a * a) + (b * b);
+        float c = Mathf.Sqrt(cSquare);
+        Debug.Log("cSquare:" + cSquare);
+        Debug.Log("c:" + c);
+        return c;
+
+    }
+
+
 }
